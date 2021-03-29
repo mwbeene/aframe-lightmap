@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A-Frame Lightmap Component</title>
+
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="components/aframe-lightmap.js"></script>
+
+</head>
+<body>
+  <a-scene light="defaultLightsEnabled: false" renderer="colorManagement: true;">
+
+    <!-- Assets -->
+    <a-assets>
+      <a-asset-item id="sponza" src="models/sponza.glb"></a-asset-item>
+      <img id="lightmap_arch" src="lightmaps/lm_arch.png">
+      <img id="lightmap_bricks" src="lightmaps/lm_bricks.png">
+      <img id="lightmap_cartouche" src="lightmaps/lm_cartouche.png">
+      <img id="lightmap_ceiling" src="lightmaps/lm_ceiling.png">
+      <img id="lightmap_column_a" src="lightmaps/lm_column_a.png">
+      <img id="lightmap_column_b" src="lightmaps/lm_column_b.png">
+      <img id="lightmap_column_c" src="lightmaps/lm_column_c.png">
+      <img id="lightmap_details" src="lightmaps/lm_details.png">
+      <img id="lightmap_floor" src="lightmaps/lm_floor.png">
+      <img id="lightmap_lion" src="lightmaps/lm_lion.png">
+      <img id="lightmap_roof" src="lightmaps/lm_roof.png">
+    </a-assets>
+
+    <!-- Player -->
+    <a-entity camera look-controls wasd-controls="acceleration: 10" position="0 1.5 0">
+    </a-entity>
+
+    <!-- World -->
+    <a-entity gltf-model="#sponza"
+      lightmap__arch="texture: #lightmap_arch; key: lm_arch"
+      lightmap__bricks="texture: #lightmap_bricks; key: lm_bricks"
+      lightmap__cartouche="texture: #lightmap_cartouche; key: lm_cartouche"
+      lightmap__ceiling="texture: #lightmap_ceiling; key: lm_ceiling"
+      lightmap__column_a="texture: #lightmap_column_a; key: lm_column_a"
+      lightmap__column_b="texture: #lightmap_column_b; key: lm_column_b"
+      lightmap__column_c="texture: #lightmap_column_c; key: lm_column_c"
+      lightmap__details="texture: #lightmap_details; key: lm_details"
+      lightmap__floor="texture: #lightmap_floor; key: lm_floor"
+      lightmap__lion="texture: #lightmap_lion; key: lm_lion"
+      lightmap__roof="texture: #lightmap_roof; key: lm_roof">
+    </a-entity>
+
+    <!-- Environment -->
+    <a-sky color="#f0f8ff"></a-sky>
+  </a-scene>
+</body>
+</html>
